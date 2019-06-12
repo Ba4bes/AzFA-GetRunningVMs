@@ -18,5 +18,5 @@ The app generates an URL, through which a webpage can be generated that shows al
 
 For more information and guidance, please see the following blogposts:
 
-[4bes.nl Configure Azure Functions for PowerShell in the portal](http://4bes.nl/2019/06/05/configure-azure-functions-for-powershell-in-the-portal)
+[4bes.nl Configure Azure Functions for PowerShell in the portal](https://4bes.nl/2019/06/12/configure-azure-functions-for-powershell-in-the-portal/)
 

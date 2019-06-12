@@ -1,0 +1,154 @@
+[
+  {
+    "PowerState": "VM running",
+    "MaintenanceRedeployStatus": {
+      "IsCustomerInitiatedMaintenanceAllowed": false,
+      "PreMaintenanceWindowStartTime": null,
+      "PreMaintenanceWindowEndTime": null,
+      "MaintenanceWindowStartTime": null,
+      "MaintenanceWindowEndTime": null,
+      "LastOperationResultCode": "MaintenanceCompleted",
+      "LastOperationMessage": "Maintenance Redeploy operation on the Virtual Machine was successfully completed."
+    },
+    "ResourceGroupName": "EXAMPLERESOURCEGROUP",
+    "Id": "/subscriptions/12345678-1234-1234-1234-123456789abc/resourceGroups/EXAMPLERESOURCEGROUP/providers/Microsoft.Compute/virtualMachines/VM1",
+    "VmId": "12345678-1234-1234-1234-123456789abc",
+    "Name": "VM1",
+    "Type": "Microsoft.Compute/virtualMachines",
+    "Location": "centralus",
+    "LicenseType": null,
+    "Tags": {},
+    "AvailabilitySetReference": null,
+    "DiagnosticsProfile": {
+      "BootDiagnostics": "Microsoft.Azure.Management.Compute.Models.BootDiagnostics"
+    },
+    "Extensions": [],
+    "HardwareProfile": {
+      "VmSize": "Standard_D2s_v3"
+    },
+    "InstanceView": null,
+    "NetworkProfile": {
+      "NetworkInterfaces": "Microsoft.Azure.Management.Compute.Models.NetworkInterfaceReference"
+    },
+    "OSProfile": {
+      "ComputerName": "VM1",
+      "AdminUsername": "adm",
+      "AdminPassword": null,
+      "CustomData": null,
+      "WindowsConfiguration": null,
+      "LinuxConfiguration": "Microsoft.Azure.Management.Compute.Models.LinuxConfiguration",
+      "Secrets": "",
+      "AllowExtensionOperations": true
+    },
+    "Plan": null,
+    "ProvisioningState": "Succeeded",
+    "StorageProfile": {
+      "ImageReference": "Microsoft.Azure.Management.Compute.Models.ImageReference",
+      "OsDisk": "Microsoft.Azure.Management.Compute.Models.OSDisk",
+      "DataDisks": ""
+    },
+    "DisplayHint": 0,
+    "Identity": null,
+    "Zones": null,
+    "FullyQualifiedDomainName": null,
+    "AdditionalCapabilities": null,
+    "RequestId": "12345678-1234-1234-1234-123456789abc",
+    "StatusCode": 200
+  },
+  {
+    "PowerState": "VM running",
+    "MaintenanceRedeployStatus": null,
+    "ResourceGroupName": "EXAMPLERESOURCEGROUP",
+    "Id": "/subscriptions/12345678-1234-1234-1234-123456789abc/resourceGroups/EXAMPLERESOURCEGROUP/providers/Microsoft.Compute/virtualMachines/VM2",
+    "VmId": "12345678-1234-1234-1234-123456789abc",
+    "Name": "VM2",
+    "Type": "Microsoft.Compute/virtualMachines",
+    "Location": "centralus",
+    "LicenseType": null,
+    "Tags": {},
+    "AvailabilitySetReference": null,
+    "DiagnosticsProfile": {
+      "BootDiagnostics": "Microsoft.Azure.Management.Compute.Models.BootDiagnostics"
+    },
+    "Extensions": [],
+    "HardwareProfile": {
+      "VmSize": "Standard_D2s_v3"
+    },
+    "InstanceView": null,
+    "NetworkProfile": {
+      "NetworkInterfaces": "Microsoft.Azure.Management.Compute.Models.NetworkInterfaceReference"
+    },
+    "OSProfile": {
+      "ComputerName": "VM2",
+      "AdminUsername": "adm",
+      "AdminPassword": null,
+      "CustomData": null,
+      "WindowsConfiguration": null,
+      "LinuxConfiguration": "Microsoft.Azure.Management.Compute.Models.LinuxConfiguration",
+      "Secrets": "",
+      "AllowExtensionOperations": true
+    },
+    "Plan": null,
+    "ProvisioningState": "Succeeded",
+    "StorageProfile": {
+      "ImageReference": "Microsoft.Azure.Management.Compute.Models.ImageReference",
+      "OsDisk": "Microsoft.Azure.Management.Compute.Models.OSDisk",
+      "DataDisks": ""
+    },
+    "DisplayHint": 0,
+    "Identity": null,
+    "Zones": null,
+    "FullyQualifiedDomainName": null,
+    "AdditionalCapabilities": null,
+    "RequestId": "12345678-1234-1234-1234-123456789abc",
+    "StatusCode": 200
+  },
+  {
+    "PowerState": "VM running",
+    "MaintenanceRedeployStatus": null,
+    "ResourceGroupName": "RG2",
+    "Id": "/subscriptions/12345678-1234-1234-1234-123456789abc/resourceGroups/RG2/providers/Microsoft.Compute/virtualMachines/VMA",
+    "VmId": "12345678-1234-1234-1234-123456789abc",
+    "Name": "VMA",
+    "Type": "Microsoft.Compute/virtualMachines",
+    "Location": "centralus",
+    "LicenseType": null,
+    "Tags": {},
+    "AvailabilitySetReference": null,
+    "DiagnosticsProfile": {
+      "BootDiagnostics": "Microsoft.Azure.Management.Compute.Models.BootDiagnostics"
+    },
+    "Extensions": [],
+    "HardwareProfile": {
+      "VmSize": "Standard_D2s_v3"
+    },
+    "InstanceView": null,
+    "NetworkProfile": {
+      "NetworkInterfaces": "Microsoft.Azure.Management.Compute.Models.NetworkInterfaceReference"
+    },
+    "OSProfile": {
+      "ComputerName": "VMA",
+      "AdminUsername": "adm",
+      "AdminPassword": null,
+      "CustomData": null,
+      "WindowsConfiguration": null,
+      "LinuxConfiguration": "Microsoft.Azure.Management.Compute.Models.LinuxConfiguration",
+      "Secrets": "",
+      "AllowExtensionOperations": true
+    },
+    "Plan": null,
+    "ProvisioningState": "Succeeded",
+    "StorageProfile": {
+      "ImageReference": "Microsoft.Azure.Management.Compute.Models.ImageReference",
+      "OsDisk": "Microsoft.Azure.Management.Compute.Models.OSDisk",
+      "DataDisks": ""
+    },
+    "DisplayHint": 0,
+    "Identity": null,
+    "Zones": null,
+    "FullyQualifiedDomainName": null,
+    "AdditionalCapabilities": null,
+    "RequestId": "12345678-1234-1234-1234-123456789abc",
+    "StatusCode": 200
+  }
+]

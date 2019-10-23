@@ -1,8 +1,8 @@
 name: DeployAzureFunction
 variables:
-  FunctionAppName: 'msignite234'
+  FunctionAppName: 'msignite2345'
   AzureConnection: 'AzureCon'
-  ResourcegGroupName: 'RG_flaaa'
+  ResourcegGroupName: 'msignite2345'
 
 trigger:
   branches:

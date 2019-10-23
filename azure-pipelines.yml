@@ -1,6 +1,6 @@
 name: DeployAzureFunction
 variables:
-  FunctionAppName: 'flaaaa'
+  FunctionAppName: 'msignite234'
   AzureConnection: 'AzureCon'
   ResourcegGroupName: 'RG_flaaa'
 

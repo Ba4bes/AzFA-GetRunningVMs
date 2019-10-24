@@ -24,3 +24,5 @@ For a complete guide on deployment, please see the following blog:
   Pester tests for the PowerShell script inside the function app
   Azure-pipelines.yml
   a pipeline to test and deploy this app through Azure DevOps
+  - **Set-Permissions.ps1**
+  For manual deployment: a script to set the correct permissions

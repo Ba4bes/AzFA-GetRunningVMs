@@ -12,7 +12,7 @@ $ID = (Get-AzADServicePrincipal -DisplayName $FunctionAppName).id
 
 $Context = Get-AzContext
 try {
-    New-AzRoleAssignment -ObjectId $ID -RoleDefinitionName Contributor -Scope "/subscriptions/$($Context.Subscription)" | Out-Null
+    New-AzRoleAssignment -ObjectId $ID -RoleDefinitionName Reader -Scope "/subscriptions/$($Context.Subscription)" | Out-Null
     Write-Output "$ID has been added as Contribitor"
 }
 Catch {

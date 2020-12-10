@@ -22,7 +22,8 @@ For a complete guide on deployment, please see the following blog:
   This is the code for the Funtion app itself
 - **Tests**
   Pester tests for the PowerShell script inside the function app
+  Note: This function is still using the legacy version of Pester.
   Azure-pipelines.yml
   a pipeline to test and deploy this app through Azure DevOps
-  - **Set-Permissions.ps1**
+- **Set-Permissions.ps1**
   For manual deployment: a script to set the correct permissions

@@ -48,6 +48,8 @@ stages:
         testResultsFiles: './TEST-RESULTS.xml'
         failTaskOnFailedTests: true # required to fail build when tests fail
   - job: Build_FA
+    dependsOn:
+      Test_FA
     pool:
       vmImage: windows-2019
     steps:

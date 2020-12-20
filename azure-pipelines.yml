@@ -1,8 +1,8 @@
 name: DeployAzureFunction
 variables:
-  FunctionAppName: 'ffffatest'
+  FunctionAppName: 'ffffat'
   AzureConnection: 'MPN'
-  ResourcegGroupName: 'RG_ffffatest'
+  ResourcegGroupName: 'RG_ffffa'
 
 trigger:
   branches:

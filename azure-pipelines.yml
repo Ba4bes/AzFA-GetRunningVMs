@@ -35,18 +35,20 @@ stages:
       displayName: 'Install PSScriptAnalyser'
     # - powershell: |
     #     Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
-    #   displayName: 'Install Pester and import module'
-    - task: Pester@10
-      inputs:
-        scriptFolder: '$(System.DefaultWorkingDirectory)\*'
-        resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
-        usePSCore: true
+    # #   displayName: 'Install Pester and import module'
+    # - task: Pester@10
+    #   inputs:
+    #     scriptFolder: '$(System.DefaultWorkingDirectory)\*'
+    #     resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
+    #     usePSCore: true
     - task: Pester@10
       displayName: 'Invoke-Pester'
       inputs:
         scriptFolder: '$(System.DefaultWorkingDirectory)\*'
         resultsFile: '$(System.DefaultWorkingDirectory)\TEST-RESULTS.XML'
         usePSCore: true
+        PesterVersion: 'OtherVersion'
+        preferredPesterVersion: '4.9.0'
       continueOnError: true
     
     - task: PublishTestResults@2
@@ -56,7 +58,7 @@ stages:
         testRunTitle: "Pester Results"
         buildPlatform: Windows
         testRunner: 'NUnit'
-        testResultsFiles: '**/TEST-*.xml'
+        testResultsFiles: './TEST-RESULTS.xml'
         failTaskOnFailedTests: true
     
     # - powershell: |

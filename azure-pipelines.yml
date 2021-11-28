@@ -27,27 +27,42 @@ stages:
         location: 'west Europe'
         csmFile: Deployment/azuredeploy.json
         deploymentMode: Validation
-    # - powershell: |
-    #    Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
-    #    Install-Module -Name Pester -RequiredVersion 4.10.1 -Force -Scope CurrentUser -SkipPublisherCheck
-    #    Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
-    #   displayName: 'Install Pester and import module'
-    
     - powershell: |
-        $outputFile = ".\TEST-RESULTS.xml"
-
-        Invoke-Pester -OutputFile $outputFile -OutputFormat NUnitXml -enableExit
-      failOnStderr: false
+        Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
+      displayName: 'Install Pester and import module'
+    - task: Pester@10
       displayName: 'Invoke-Pester'
-
-    - task: PublishTestResults@2
-      displayName: Publish Test Results
       inputs:
-        testRunTitle: 'Test Results for Pester'
-        buildPlatform: 'Windows'
+        scriptFolder: '$(System.DefaultWorkingDirectory)\*'
+        resultsFile: '$(System.DefaultWorkingDirectory)\TEST-RESULTS.XML'
+        usePSCore: false
+      continueOnError: true
+    
+    - task: PublishTestResults@2
+      condition: always()
+      displayName: 'Publish Test Results'
+      inputs:
+        testRunTitle: "Offline Pester Results"
+        buildPlatform: Windows
         testRunner: 'NUnit'
-        testResultsFiles: './TEST-RESULTS.xml'
-        failTaskOnFailedTests: true # required to fail build when tests fail
+        testResultsFiles: '**/TEST-*.xml'
+        failTaskOnFailedTests: true
+    
+    # - powershell: |
+    #     $outputFile = ".\TEST-RESULTS.xml"
+
+    #     Invoke-Pester -OutputFile $outputFile -OutputFormat NUnitXml -enableExit
+    #   failOnStderr: false
+    #   displayName: 'Invoke-Pester'
+
+    # - task: PublishTestResults@2
+    #   displayName: Publish Test Results
+    #   inputs:
+    #     testRunTitle: 'Test Results for Pester'
+    #     buildPlatform: 'Windows'
+    #     testRunner: 'NUnit'
+    #     testResultsFiles: './TEST-RESULTS.xml'
+    #     failTaskOnFailedTests: true # required to fail build when tests fail
   - job: Build_FA
     dependsOn:
       Test_FA

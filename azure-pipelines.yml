@@ -17,7 +17,7 @@ stages:
   jobs:
   - job: Test_FA
     pool:
-      vmImage: windows-latest
+      vmImage: ubuntu-latest
     steps:
     - task: AzureResourceGroupDeployment@2
       displayName: 'Test ARM Deployment'
@@ -35,7 +35,7 @@ stages:
       inputs:
         scriptFolder: '$(System.DefaultWorkingDirectory)\*'
         resultsFile: '$(System.DefaultWorkingDirectory)\TEST-RESULTS.XML'
-        usePSCore: false
+        usePSCore: true
       continueOnError: true
     
     - task: PublishTestResults@2
@@ -67,7 +67,7 @@ stages:
     dependsOn:
       Test_FA
     pool:
-      vmImage: windows-latest
+      vmImage: ubuntu-latest
     steps:
     - task: ArchiveFiles@2
       displayName: 'Archive FunctionApp'
@@ -88,7 +88,7 @@ stages:
   jobs:
   - job: Deploy_ARM
     pool:
-      vmImage: windows-latest
+      vmImage: ubuntu-latest
     steps:
     - task: AzureResourceGroupDeployment@2
       displayName: 'Deploy Azure Resources'
@@ -112,7 +112,7 @@ stages:
     dependsOn:
       Deploy_ARM
     pool:
-      vmImage: windows-2019
+      vmImage: ubuntu-latest
     steps:
     - task: DownloadPipelineArtifact@0
       inputs:

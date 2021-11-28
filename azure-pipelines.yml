@@ -17,7 +17,7 @@ stages:
   jobs:
   - job: Test_FA
     pool:
-      vmImage: ubuntu-latest
+      vmImage: windows-latest
     steps:
     - task: AzureResourceGroupDeployment@2
       displayName: 'Test ARM Deployment'
@@ -37,6 +37,11 @@ stages:
     #     Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
     #   displayName: 'Install Pester and import module'
     - task: Pester@10
+      inputs:
+        scriptFolder: '$(System.DefaultWorkingDirectory)\*'
+        resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
+        usePSCore: true
+    - task: Pester@10
       displayName: 'Invoke-Pester'
       inputs:
         scriptFolder: '$(System.DefaultWorkingDirectory)\*'
@@ -48,7 +53,7 @@ stages:
       condition: always()
       displayName: 'Publish Test Results'
       inputs:
-        testRunTitle: "Offline Pester Results"
+        testRunTitle: "Pester Results"
         buildPlatform: Windows
         testRunner: 'NUnit'
         testResultsFiles: '**/TEST-*.xml'

@@ -27,6 +27,12 @@ stages:
         location: 'west Europe'
         csmFile: Deployment/azuredeploy.json
         deploymentMode: Validation
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: 'Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser'
+        pwsh: true
+      displayName: 'Install PSScriptAnalyser'
     # - powershell: |
     #     Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
     #   displayName: 'Install Pester and import module'

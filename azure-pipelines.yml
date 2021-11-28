@@ -107,13 +107,14 @@ stages:
         overrideParameters: '-functionAppName $(FunctionAppName)'
         deploymentMode: Incremental
         deploymentOutputs: DeploymentOutput
-    - task: AzurePowerShell@3
+    - task: AzurePowerShell@5
       displayName: 'Set FA Permissions'
       inputs:
         azureSubscription: $(AzureConnection)
         ScriptPath: Deployment/deploy.ps1
         ScriptArguments: '-DeploymentOutput ''$(DeploymentOutput)'''
         azurePowerShellVersion: LatestVersion
+        pwsh: true
   - job: Deploy_FA
     dependsOn:
       Deploy_ARM

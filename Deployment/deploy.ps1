@@ -6,9 +6,9 @@ Write-output "DeploymentOutput:" $DeploymentOutput
 
 $ID = ($DeploymentOutput | ConvertFrom-Json ).principalId.Value
 
-$Context = Get-AzurermContext
+$Context = Get-AzContext
 try {
-    New-AzureRmRoleAssignment -ObjectId $ID -RoleDefinitionName Contributor -Scope "/subscriptions/$($Context.Subscription)" -ErrorAction SilentlyContinue | Out-Null
+    New-AzRoleAssignment -ObjectId $ID -RoleDefinitionName Contributor -Scope "/subscriptions/$($Context.Subscription)" -ErrorAction SilentlyContinue | Out-Null
     Write-Output "$ID has been added as Contribitor"
 }
 Catch {

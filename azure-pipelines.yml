@@ -41,7 +41,7 @@ stages:
     #     scriptFolder: '$(System.DefaultWorkingDirectory)\*'
     #     resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
     #     usePSCore: true
-    - task: Pester@10
+    - task: Pester@9
       displayName: 'Invoke-Pester'
       inputs:
         scriptFolder: '$(System.DefaultWorkingDirectory)\*'
